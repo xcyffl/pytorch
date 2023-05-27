@@ -1,3 +1,9 @@
+/*
+compiler only include this header once
+no advantage to use of both the include guard idiom and #pragma once
+#pragma once avoids symbol collisions where different headers use the same preprocessor symbol 
+as the guard value
+*/
 #pragma once
 #ifndef C10_UTIL_CPP17_H_
 #define C10_UTIL_CPP17_H_
