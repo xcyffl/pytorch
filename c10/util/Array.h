@@ -4,7 +4,7 @@
  *
  * Changes:
  *  - isolate, i.e. remove dependencies on internal libstdc++ stuff
- *  - use c++17 behavior even in c++11 or c++14
+ *  - use c++17 behavior even in c++11 or c++14 (done by have c++17.h all the template metaprogramming?)
  *  - remove std::swappable special case because that doesn't work with MSVC
  *  - constexpr more things
  *  - add some features like prepend/tail
@@ -77,7 +77,7 @@ struct __array_traits<_Tp, 0> final {
 };
 
 [[noreturn]] inline void __throw_out_of_range(const std::string& msg) {
-  throw std::out_of_range(msg);
+  throw std::out_of_range(msg); //[[noreturn]] does not return control flow to its caller after it finishes
 }
 } // namespace detail
 
